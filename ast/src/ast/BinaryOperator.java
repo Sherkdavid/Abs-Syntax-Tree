@@ -49,9 +49,11 @@ public class BinaryOperator extends Node{
         	Variable v = new Variable("",left.val+right.val);
         	
 	    	return v;
-        
-        	
-        
+			case "<":
+				System.out.println("while ("+left.name + " < " + right.name+")");
+				break;
+			case ">":
+				System.out.println("while ("+left.name + " > " + right.name+")");
         }
         
       return null;     	
