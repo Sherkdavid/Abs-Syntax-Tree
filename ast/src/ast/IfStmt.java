@@ -45,7 +45,7 @@ public class IfStmt extends Node {
 
     public Variable eval(Context c) {
         int sz = childern.size();
-        System.out.println("DeclStmt - eval sz "+sz);
+        System.out.println("IfStmt - eval sz "+sz);
         Node n;
         for (int i=0;i<sz;i++) {
             n = childern.get(i);

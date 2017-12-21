@@ -44,6 +44,8 @@ public class BinaryOperator extends Node{
 			switch (op) {
 				case "=":
 					System.out.println("assign " + left.name + " = ");
+					childern.get(1).eval(c);
+					break;
 				case "+":
 					System.out.println(left.name + " + " + childern.get(1).eval(c));
 					break;
