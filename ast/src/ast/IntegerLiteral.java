@@ -20,7 +20,7 @@ public class IntegerLiteral extends Node {
 	public Variable eval(Context c) {
     //	System.out.println("VarDecl -eval");
     	
-    	Variable v = new Variable("",val);
+    	Variable v = new Variable(""+val,val);
     	return v;
     }
      

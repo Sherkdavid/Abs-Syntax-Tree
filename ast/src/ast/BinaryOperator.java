@@ -38,25 +38,35 @@ public class BinaryOperator extends Node{
 	//	System.out.println("Binaryoperator -eval");
         if (childern.size()!=2)
         	System.out.println("need to operands for "+op);
-        Variable left=childern.get(0).eval(c);
-        Variable right =childern.get(1).eval(c);
-        switch (op) {
-        case "=":
-	    	left.set(right);
-	    	System.out.println("assign "+left.name+" = "+left.val);
-	    	return null;
-        case "+":
-        	Variable v = new Variable("",left.val+right.val);
-        	
-	    	return v;
-			case "<":
-				System.out.println("while ("+left.name + " < " + right.name+")");
-				break;
-			case ">":
-				System.out.println("while ("+left.name + " > " + right.name+")");
-        }
-        
-      return null;     	
-		
+		Variable left=childern.get(0).eval(c);
+		if(childern.get(1) instanceof BinaryOperator)
+		{
+			switch (op) {
+				case "=":
+					System.out.println("assign " + left.name + " = ");
+				case "+":
+					System.out.println(left.name + " + " + childern.get(1).eval(c));
+					break;
+			}
+		}
+		else {
+			Variable right = childern.get(1).eval(c);
+			switch (op) {
+				case "=":
+					left.set(right);
+					System.out.println("assign " + left.name + " = " + left.val);
+					return null;
+				case "+":
+					System.out.println(left.name + " + " + right.name);
+					break;
+				case "<":
+					System.out.println("(" + left.name + " < " + right.name + ")");
+					break;
+				case ">":
+					System.out.println("(" + left.name + " > " + right.name + ")");
+			}
+		}
+      return null;
+
 	}
 }

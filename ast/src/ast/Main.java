@@ -112,7 +112,7 @@ try {
 	code.Print();
 	for (int i=0;i<sz;i++) {
 		n = head.childern.get(i);
-		System.out.println(" eval "+n);
+	//	System.out.println(" eval "+n);
 		n.eval(context);
 	}
 	reader.close();

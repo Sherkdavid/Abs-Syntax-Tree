@@ -33,10 +33,11 @@ public class WhileStmt extends Node{
     public String codeGen(Code c) {
         return "filler";
     }
+    @Override
     public Variable eval(Context c) {
         int sz = childern.size();
-        //	System.out.println("DeclStmt - eval sz "+sz);
         Node n;
+        System.out.print("while");
         for (int i=0;i<sz;i++) {
             n = childern.get(i);
             n.eval(c);
